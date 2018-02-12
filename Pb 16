@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int d[400]={0},sum=0;
+  d[0]=1;
+  int carry=0;
+  int temp=0;
+  for(int j=0;j<=999;j++)
+  {
+     carry=0;
+     temp=0;
+     for(int i=0;i<=399;i++)
+     {
+        temp=d[i]*2+carry;
+        d[i]= temp%10;
+        carry = temp/10;
+     }
+  }
+  for(int i=0;i<399;i++)
+  {
+    if(d[i]!=0)
+    {
+    sum=sum+d[i];
+    }
+  }
+  cout<<sum;
+}
